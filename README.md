@@ -49,7 +49,7 @@ Este proyecto fue desarrollado como trabajo práctico universitario, con el obje
 
 ## 🏗️ Diagrama de arquitectura
 
-> Los diagramas Mermaid se renderizan automáticamente en GitHub. Si los ves como texto plano, abrí este archivo en GitHub o en un editor compatible (VS Code con la extensión Mermaid, por ejemplo).
+
 
 ```mermaid
 flowchart TB
