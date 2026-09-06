@@ -10,7 +10,7 @@ Aplicación web full-stack para la gestión integral de un negocio de alquiler d
 
 ## 📌 Propósito
 
-Este proyecto nació como práctica de backend con PHP y CodeIgniter 4, aplicando el patrón MVC de punta a punta: modelos con reglas de validación nativas del framework, controladores separados por rol (administrador / cliente), autenticación por sesión, y vistas dinámicas con Bootstrap 5 y JavaScript (SweetAlert2, FullCalendar).
+Este proyecto fue desarrollado como trabajo práctico universitario, con el objetivo de aprender y aplicar PHP y CodeIgniter 4 con el patrón MVC de punta a punta: modelos con reglas de validación nativas del framework, controladores separados por rol (administrador / cliente), autenticación por sesión, y vistas dinámicas con Bootstrap 5 y JavaScript (SweetAlert2, FullCalendar).
 
 ## ✨ Funcionalidades
 
