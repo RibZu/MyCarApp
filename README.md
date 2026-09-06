@@ -12,8 +12,6 @@ Aplicación web full-stack para la gestión integral de un negocio de alquiler d
 
 Este proyecto nació como práctica de backend con PHP y CodeIgniter 4, aplicando el patrón MVC de punta a punta: modelos con reglas de validación nativas del framework, controladores separados por rol (administrador / cliente), autenticación por sesión, y vistas dinámicas con Bootstrap 5 y JavaScript (SweetAlert2, FullCalendar).
 
-Lo comparto como pieza de portfolio porque cubre un flujo de negocio completo y no trivial —desde el registro de un cliente hasta el ciclo de vida de un alquiler (reserva → aprobación → devolución)— e incluye validaciones de negocio reales, como evitar solapamiento de fechas para un mismo vehículo o impedir la baja de un cliente con un alquiler activo.
-
 ## ✨ Funcionalidades
 
 **Autenticación y usuarios**
@@ -248,14 +246,13 @@ composer install
 
 ## ⚠️ Limitaciones conocidas
 
-Este proyecto fue un ejercicio de aprendizaje, no un sistema en producción. Documento estas limitaciones a propósito, para dejar claro qué se sabe que falta en lugar de vender el repo como algo que no es:
+Este proyecto fue un ejercicio de aprendizaje, no un sistema en producción:
 
-- **Credenciales hardcodeadas**: `app/Config/Database.php` tiene el usuario/contraseña de MySQL y el nombre de la base escritos directamente en el código (`root` sin password, `mycar_db`), en vez de leerse desde `.env`. Lo mismo pasa con `baseURL` en `app/Config/App.php`.
-- **CSRF deshabilitado**: el filtro `csrf` está definido en `app/Config/Filters.php` pero comentado en `$globals`, por lo que los formularios POST no están protegidos contra Cross-Site Request Forgery.
-- **Fallback de contraseña en texto plano**: `LoginController::autenticar()` acepta el login si `password_verify()` falla pero la contraseña coincide como texto plano (`$password === $pass`). Es un resabio de una carga de usuarios de prueba sin hashear que no se limpió.
-- **Autorización manual y repetida**: el chequeo de rol (`session()->get('rol') != 'admin'`) se repite en cada método de cada controlador en vez de resolverse con un filtro/middleware centralizado, lo que es propenso a olvidos (de hecho, en `ClienteController::eliminar` la verificación de rol ocurre después de una consulta a la base de datos).
-- **Sin migraciones ni seeds**: las carpetas `app/Database/Migrations` y `Seeds` están vacías; el esquema de la base no está versionado en el repo (se infiere de las reglas de validación de los modelos, ver sección de instalación).
-- **Sin tests automatizados sobre la lógica de negocio**: existe configuración de PHPUnit pero no hay cobertura sobre controladores o modelos.
+- **Credenciales hardcodeadas**: usuario/contraseña de MySQL y `baseURL` escritos directamente en `app/Config/Database.php` y `App.php` en vez de leerse desde `.env`.
+- **CSRF deshabilitado**: el filtro `csrf` existe pero está comentado en `$globals` de `Filters.php`.
+- **Fallback de contraseña en texto plano** en `LoginController::autenticar()` (`$password === $pass`), resabio de una carga de usuarios sin hashear.
+- **Autorización repetida a mano** (`session()->get('rol')`) en cada método de cada controlador, en vez de un filtro centralizado.
+- **Sin migraciones, seeds ni tests** sobre la lógica de negocio.
 
 ## 📄 Licencia
 
