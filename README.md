@@ -33,6 +33,20 @@ Este proyecto fue desarrollado como trabajo práctico universitario, con el obje
 **Reportes**
 - Dashboard de reportes con listados por vehículo, por cliente, y de alquileres actualmente en curso (consultas con `JOIN` entre `alquileres`, `vehiculos` y `usuarios`).
 
+## 📸 Capturas de pantalla
+
+| Catálogo público | Reserva con calendario |
+|---|---|
+| ![Catálogo de vehículos](screenshots/02-catalogo.png) | ![Confirmación de reserva](screenshots/04-reserva-calendario.png) |
+
+| Gestión de vehículos (admin) | Gestión de alquileres (admin) |
+|---|---|
+| ![Panel de vehículos](screenshots/06-admin-vehiculos.png) | ![Gestión de alquileres](screenshots/08-admin-alquileres.png) |
+
+| Panel de clientes (admin) | Dashboard de reportes |
+|---|---|
+| ![Panel de clientes](screenshots/07-admin-clientes.png) | ![Dashboard de reportes](screenshots/09-admin-reportes.png) |
+
 ## 🏗️ Diagrama de arquitectura
 
 > Los diagramas Mermaid se renderizan automáticamente en GitHub. Si los ves como texto plano, abrí este archivo en GitHub o en un editor compatible (VS Code con la extensión Mermaid, por ejemplo).
