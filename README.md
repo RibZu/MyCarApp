@@ -198,7 +198,7 @@ composer install
    ```
    Configurá al menos `app.baseURL` y las credenciales de `database.default.*`.
 
-2. Este repo no incluye migraciones ni un dump SQL. Creá manualmente la base de datos y las tablas con el siguiente esquema (inferido de los modelos):
+2. Este repo no incluye migraciones ni un dump SQL. Creá manualmente la base de datos y las tablas con el siguiente esquema:
 
    ```sql
    CREATE DATABASE mycar_db CHARACTER SET utf8mb4;
