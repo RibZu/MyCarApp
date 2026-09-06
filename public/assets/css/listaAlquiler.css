@@ -1,0 +1,147 @@
+
+    .fleet-wrap { font-family: 'Inter', sans-serif; }
+
+    /* ---- KPI strip ---- */
+    .kpi-card {
+        border-radius: 16px;
+        padding: 1.1rem 1.3rem;
+        background: #fff;
+        border: 1px solid #eef0f3;
+        display: flex;
+        align-items: center;
+        gap: .9rem;
+        transition: box-shadow .15s ease;
+    }
+    .kpi-card:hover { box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06); }
+    .kpi-icon {
+        width: 42px; height: 42px; min-width: 42px;
+        border-radius: 11px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.05rem;
+    }
+    .kpi-num { font-size: 1.5rem; font-weight: 700; color: #0f172a; line-height: 1; letter-spacing: -0.5px; }
+    .kpi-label { font-size: .72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: .4px; }
+
+    /* ---- header ---- */
+    .fleet-title { font-weight: 800; color: #0f172a; letter-spacing: -0.6px; }
+    .fleet-sub { color: #94a3b8; font-size: .88rem; }
+
+    /* ---- table card ---- */
+    .fleet-card {
+        border-radius: 18px;
+        background: #fff;
+        border: 1px solid #eef0f3;
+        overflow: hidden;
+    }
+    .fleet-table thead th {
+        background: #f8fafc;
+        color: #94a3b8;
+        font-size: .68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .6px;
+        border-bottom: 1px solid #eef0f3;
+        padding: .95rem 1rem;
+        white-space: nowrap;
+    }
+    .fleet-table tbody tr {
+        border-left: 4px solid transparent;
+        transition: background .12s ease;
+    }
+    .fleet-table tbody tr:hover { background: #fafbfc; }
+    .fleet-table tbody tr.row-reserva   { border-left-color: #2563eb; }
+    .fleet-table tbody tr.row-alquiler  { border-left-color: #f59e0b; }
+    .fleet-table tbody tr.row-finalizado{ border-left-color: #e2e8f0; }
+    .fleet-table td { padding: .95rem 1rem; border-bottom: 1px solid #f4f6f8; vertical-align: middle; }
+    .fleet-table tbody tr:last-child td { border-bottom: none; }
+
+    .vehicle-icon {
+        width: 46px; height: 46px; min-width: 46px;
+        border-radius: 12px;
+        background: #f8fafc;
+        border: 1px solid #eef0f3;
+        display: flex; align-items: center; justify-content: center;
+        color: #64748b;
+        font-size: 1.15rem;
+    }
+    .vehicle-name { font-weight: 700; color: #0f172a; font-size: .92rem; }
+    .vehicle-meta { color: #94a3b8; font-size: .76rem; }
+
+    .client-name { font-weight: 600; color: #1e293b; font-size: .9rem; }
+    .client-phone { color: #94a3b8; font-size: .78rem; }
+
+    .period-dates { font-weight: 600; color: #334155; font-size: .85rem; }
+    .days-pill {
+        display: inline-block;
+        background: #f8fafc;
+        border: 1px solid #eef0f3;
+        color: #64748b;
+        font-size: .68rem;
+        font-weight: 700;
+        padding: .2rem .55rem;
+        border-radius: 7px;
+        margin-top: .3rem;
+    }
+
+    .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        font-size: .72rem;
+        font-weight: 700;
+        padding: .42rem .8rem;
+        border-radius: 99px;
+        letter-spacing: .2px;
+    }
+    .status-pill .dot { width: 6px; height: 6px; border-radius: 50%; }
+    .status-reserva    { background: #eff6ff; color: #2563eb; }
+    .status-reserva .dot { background: #2563eb; }
+    .status-alquiler    { background: #fffbeb; color: #b45309; }
+    .status-alquiler .dot { background: #f59e0b; }
+    .status-finalizado   { background: #f8fafc; color: #94a3b8; }
+    .status-finalizado .dot { background: #cbd5e1; }
+
+    .btn-fleet-primary {
+        background: #0f172a;
+        color: #fff;
+        border: none;
+        font-size: .74rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .3px;
+        padding: .55rem .9rem;
+        border-radius: 10px;
+        transition: background .15s ease;
+    }
+    .btn-fleet-primary:hover { background: #1e293b; color: #fff; }
+
+    .btn-fleet-danger {
+        background: #fff;
+        color: #dc2626;
+        border: 1.5px solid #fee2e2;
+        font-size: .74rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .3px;
+        padding: .55rem .9rem;
+        border-radius: 10px;
+        transition: all .15s ease;
+    }
+    .btn-fleet-danger:hover { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+
+    .no-action { color: #cbd5e1; font-size: .8rem; font-style: italic; }
+
+    .empty-state { padding: 4rem 1rem; text-align: center; }
+    .empty-state i { font-size: 2.4rem; color: #e2e8f0; }
+    .empty-state p { color: #94a3b8; font-weight: 500; margin-top: .6rem; font-size: .92rem; }
+
+    .alert-fleet {
+        border: none;
+        border-radius: 14px;
+        padding: .9rem 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+        font-size: .88rem;
+        font-weight: 600;
+    }

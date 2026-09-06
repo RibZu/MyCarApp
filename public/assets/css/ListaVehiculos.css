@@ -1,0 +1,341 @@
+/* Custom styles for MyCarApp */
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc !important;
+}
+
+/* Nav Links Active state with blue bottom line */
+.header-nav .nav-link {
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.header-nav .nav-link.active {
+    color: #0047ff !important;
+}
+
+.header-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #0047ff;
+    border-radius: 4px;
+}
+
+/* Logo extra bolding */
+.fw-extrabold {
+    font-weight: 800 !important;
+}
+
+/* Hover effects for footer links */
+.hover-primary:hover {
+    color: #0047ff !important;
+    text-decoration: underline !important;
+}
+
+/* Catalog Title Styling */
+.catalog-title {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.catalog-desc {
+    color: #64748b;
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Vehicle Grid and Cards */
+.vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+    justify-content: center;
+    gap: 30px;
+}
+
+.vehicle-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* Image Wrapper with Blueish Gradient Overlay */
+.card-img-wrapper {
+    position: relative;
+    height: 220px;
+    background: linear-gradient(135deg, #4da1ff 0%, #0047ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Add a grid/radial texture or light wash behind the car */
+.card-img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+/* Car Image positioning */
+.car-image {
+    max-width: 85%;
+    max-height: 70%;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 15px 15px rgba(0, 71, 255, 0.35));
+    transition: transform 0.4s ease;
+}
+
+.vehicle-card:hover .car-image {
+    transform: scale(1.05);
+}
+
+/* Image Overlay text on lower left */
+.card-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 71, 255, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Year Badge inside image area */
+.year-badge {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: fit-content;
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.car-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-top: 5px;
+    letter-spacing: -0.2px;
+}
+
+/* Card Body Specs styling */
+.card-body-specs {
+    padding: 24px;
+    flex-grow: 1;
+}
+
+.specs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 16px;
+    column-gap: 12px;
+}
+
+.spec-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+.spec-block i {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.spec-block .status-dot {
+    font-size: 0.65rem;
+}
+
+/* Card Footer with Pricing and Action Button */
+.card-footer-pricing {
+    padding: 20px 24px;
+    border-top: 1px solid #f1f5f9;
+    background-color: #fafbfd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-box .amount {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #0047ff;
+    line-height: 1.1;
+}
+
+.price-box .period {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+/* Emerald green alquilar button */
+.btn-alquilar {
+    background-color: #006b52 !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 10px 24px !important;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0, 107, 82, 0.15);
+}
+
+.btn-alquilar:hover {
+    background-color: #005642 !important;
+    transform: scale(1.02);
+}
+
+.btn-alquilar:active {
+    transform: scale(0.98);
+}
+
+/* Placeholder card style */
+.placeholder-card {
+    border: 2px dashed #e2e8f0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    height: 100%;
+}
+
+.placeholder-card .dots {
+    font-size: 2rem;
+    color: #cbd5e1;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.placeholder-card .text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.placeholder-card .link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0047ff;
+    text-decoration: none;
+}
+
+.placeholder-card .link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   FORM & UPLOAD ZONE STYLES
+   ========================================== */
+
+.form-label {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.875rem;
+}
+
+.form-control, .form-select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 0.925rem;
+    color: #1e293b;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #0047ff;
+    box-shadow: 0 0 0 4px rgba(0, 71, 255, 0.1);
+}
+
+.upload-dropzone {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f8fafc;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+    position: relative;
+}
+
+.upload-dropzone:hover {
+    border-color: #0047ff;
+    background-color: #f1f5f9;
+}
+
+.upload-dropzone i {
+    font-size: 2.2rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.upload-dropzone .upload-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.upload-dropzone .upload-subtitle {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.upload-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
