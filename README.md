@@ -49,102 +49,11 @@ Este proyecto fue desarrollado como trabajo práctico universitario, con el obje
 
 ## 🏗️ Diagrama de arquitectura
 
-
-
-```mermaid
-flowchart TB
-    subgraph Cliente["🌐 Navegador"]
-        UI[Vistas PHP + Bootstrap 5<br/>SweetAlert2 · FullCalendar]
-    end
-
-    subgraph App["CodeIgniter 4 · MVC"]
-        direction TB
-        Routes[Routes.php]
-
-        subgraph Controllers["Controladores"]
-            Login[LoginController]
-            Cliente[ClienteController]
-            Veh[Vehiculo]
-            Admin[Administracion]
-            Alq[alquilerController]
-        end
-
-        subgraph Models["Modelos"]
-            UsuarioModel
-            VehiculoModel
-            AlquilerModel
-        end
-
-        Session[(Sesión PHP<br/>rol / usuario_id)]
-    end
-
-    DB[(MySQL<br/>usuarios · vehiculos · alquileres)]
-
-    UI -->|HTTP request| Routes
-    Routes --> Login & Cliente & Veh & Admin & Alq
-    Login --> UsuarioModel
-    Cliente --> UsuarioModel
-    Cliente --> AlquilerModel
-    Veh --> VehiculoModel
-    Veh --> AlquilerModel
-    Admin --> VehiculoModel
-    Alq --> AlquilerModel
-    Alq --> VehiculoModel
-    Alq --> UsuarioModel
-
-    Login -.-> Session
-    Controllers -.->|valida rol| Session
-
-    UsuarioModel --> DB
-    VehiculoModel --> DB
-    AlquilerModel --> DB
-
-    Controllers -->|render| UI
-```
+![Diagrama de arquitectura](docs/diagrams/architecture.png)
 
 ## 🗂️ Diagrama entidad-relación
 
-```mermaid
-erDiagram
-    USUARIOS ||--o{ ALQUILERES : realiza
-    VEHICULOS ||--o{ ALQUILERES : es_reservado_en
-
-    USUARIOS {
-        int id PK
-        string nombre_apellido
-        string direccion
-        string telefono
-        string email UK
-        string password
-        enum rol "admin | cliente"
-        date fecha_alta
-        boolean activo
-    }
-
-    VEHICULOS {
-        int id PK
-        string marca
-        string modelo
-        int anio
-        string imagen
-        int numero_plazas
-        string motor
-        int kilometraje
-        decimal precio_dia
-        enum estado_alquiler "disponible | alquilado"
-        boolean activo
-    }
-
-    ALQUILERES {
-        int id PK
-        int vehiculo_id FK
-        int usuario_id FK
-        date fecha_desde
-        int cantidad_dias
-        date fecha_hasta
-        enum estado "reserva | alquiler | finalizado"
-    }
-```
+![Diagrama entidad-relación](docs/diagrams/entity-relationship.png)
 
 ## 🛠️ Stack técnico
 
