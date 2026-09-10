@@ -49,11 +49,11 @@ Este proyecto fue desarrollado como trabajo práctico universitario, con el obje
 
 ## 🏗️ Diagrama de arquitectura
 
-**Diagrama:** [architecture.html](docs/diagrams/architecture.html)
+![Diagrama de arquitectura](docs/diagrams/architecture.png)
 
 ## 🗂️ Diagrama entidad-relación
 
-**Diagrama:** [entity-relationship.html](docs/diagrams/entity-relationship.html)
+![Diagrama entidad-relación](docs/diagrams/entity-relationship.png)
 
 ## 🛠️ Stack técnico
 
